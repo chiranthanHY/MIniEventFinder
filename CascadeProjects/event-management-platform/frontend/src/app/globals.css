@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode - Sunrise palette */
+    --background: 35 100% 98%;
+    --foreground: 20 14% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14% 12%;
+    --primary: 340 82% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 80% 55%;
+    --secondary-foreground: 20 14% 12%;
+    --muted: 35 20% 92%;
+    --muted-foreground: 20 8% 45%;
+    --accent: 45 95% 50%;
+    --accent-foreground: 20 14% 12%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 340 82% 52%;
+    --radius: 1.25rem;
+  }
+
+  .dark {
+    /* Dark mode - Twilight palette */
+    --background: 260 20% 5%;
+    --foreground: 35 20% 95%;
+    --card: 260 18% 8%;
+    --card-foreground: 35 20% 95%;
+    --popover: 260 18% 8%;
+    --popover-foreground: 35 20% 95%;
+    --primary: 340 82% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 80% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 260 15% 15%;
+    --muted-foreground: 35 10% 60%;
+    --accent: 280 65% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 260 15% 18%;
+    --input: 260 15% 18%;
+    --ring: 340 82% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors;
+  }
+}
+
+@layer utilities {
+  /* Sunset gradient - orange to coral pink to golden */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-rose-500 to-amber-400;
+  }
+  
+  /* Dawn gradient - coral to peach */
+  .text-gradient-dawn {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-rose-400 via-coral-400 to-orange-300;
+  }
+  
+  /* Twilight gradient for dark mode */
+  .text-gradient-twilight {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-400 via-rose-400 to-amber-300;
+  }
+  
+  .glass {
+    @apply bg-white/[0.03] dark:bg-white/[0.03] backdrop-blur-xl border-white/[0.08];
+  }
+  
+  .glass-light {
+    @apply bg-white/80 backdrop-blur-xl border-orange-200/30;
+  }
+  
+  /* Warm glow effect */
+  .warm-glow {
+    box-shadow: 0 0 40px rgba(251, 146, 60, 0.15);
+  }
+}
